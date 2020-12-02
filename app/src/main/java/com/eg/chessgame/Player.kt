@@ -162,15 +162,25 @@ class Player(var color: Int) {
             val movePositions = mutableListOf<Pair<Int, Int>>()
             val nextRow = pos.first + color
 
+            // Helper function to determine if any attack moves are possible
             fun checkIfEnemy(pos: Pair<Int, Int>): Boolean = board[pos.first][pos.second].sign == -color
+
+            // Custom function for pawn 'cause it has different logic of moving and capturing
+            // It can't move to tne next position if it's occupied by an enemy
+            fun checkPawnForObstacle(currentPos: Pair<Int, Int>, nextPos: Pair<Int, Int>): Boolean {
+                val currentFig = board[currentPos.first][currentPos.second]
+                val nextFig = board[nextPos.first][nextPos.second]
+                return (currentFig == 0 || currentFig.sign == color) && (nextFig == 0)
+            }
 
             // If haven't done any move is possible to move in 2 positions forward
             if (pos.first == initialRowPos + color) {
-                var row = nextRow
-                while (checkForObstacle(Pair(row, pos.second), Pair(row+color, pos.second)) &&
-                        row != nextRow + 2*color) {
-                    movePositions += Pair(row, pos.second)
+                var row = pos.first
+                while (checkPawnForObstacle(Pair(row, pos.second), Pair(row+color, pos.second)) &&
+                        row != initialRowPos + 3*color) {
                     row += color
+                    movePositions += Pair(row, pos.second)
+
                 }
             }
             else if ((0..7).contains(nextRow) && board[nextRow][pos.second] == 0) movePositions += Pair(nextRow, pos.second)

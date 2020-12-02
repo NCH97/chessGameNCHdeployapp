@@ -4,9 +4,6 @@ import com.eg.android.view.customviews.ChessboardView
 import kotlin.math.sign
 
 class Presenter(private val view: ChessboardInterface) {
-    //TODO:
-    // For pawns attack moves aren't displayed
-    // Display pieces on board
     
     private val game = Game()
 
@@ -17,7 +14,7 @@ class Presenter(private val view: ChessboardInterface) {
         val pieceNum = game.board[currentPosition!!.first][currentPosition.second]
         val currentPlayerNum = game.currentPlayer
 
-         /*Handle the logic:
+         /* Handle the logic:
             -if chosen piece of current player's side -> tell view to select it and
              display available moves
 
