@@ -2,6 +2,8 @@ package com.eg.chessgame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.MotionEvent
 import android.widget.Toast
 import com.eg.android.view.customviews.ChessboardView
@@ -10,6 +12,21 @@ class MainActivity : AppCompatActivity(), Presenter.ChessboardInterface {
     private lateinit var chessboard: ChessboardView
     private lateinit var presenter: Presenter
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.cancel_move -> {
+                presenter.cancelMove()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

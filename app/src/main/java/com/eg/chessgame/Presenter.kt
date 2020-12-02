@@ -1,18 +1,28 @@
 package com.eg.chessgame
 
-import com.eg.android.view.customviews.ChessboardView
 import kotlin.math.sign
 
 class Presenter(private val view: ChessboardInterface) {
     
     private val game = Game()
 
+    // Variable of check state
+    // 0: no check
+    // 1: white has to move his king
+    // -1: black has to move his king
+    private var isCheck = 0
+
     private var lastAvailableMoves: List<Pair<Int, Int>> = listOf()
+
+    fun cancelMove() {
+        game.cancelMove()
+        view.redrawPieces(game.playerWhite.pieces, game.playerBlack.pieces)
+    }
 
     fun handleInput(currentPosition: Pair<Int, Int>?, previousPosition: Pair<Int, Int>?) {
 
         val pieceNum = game.board[currentPosition!!.first][currentPosition.second]
-        val currentPlayerNum = game.currentPlayer
+        val currentPlayerNum = game.currentPlayerColor
 
          /* Handle the logic:
             -if chosen piece of current player's side -> tell view to select it and

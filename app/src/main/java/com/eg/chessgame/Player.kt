@@ -6,6 +6,8 @@ class Player(var color: Int) {
     // -1 = white, 1 = black
     private val initialRowPos = if (color == 1) 0 else 7
 
+    // TODO: make Piece object and replace all pair in maps to them
+
     // Number of fig -> Name, Position
     val pieces: MutableMap<Int, Pair<String, Pair<Int, Int>>> = mutableMapOf(
         1 * color to Pair("King", Pair(initialRowPos, 3)),
