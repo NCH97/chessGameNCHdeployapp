@@ -10,6 +10,7 @@ Implemented mechanics:
 * you can capture opponent's pieces
 * you can do a check(chekmate)
 * swaps on each turn
+* Move can be cancelled(only last one)
 
 Will be added: 
 * graphic representations of pieces itself
