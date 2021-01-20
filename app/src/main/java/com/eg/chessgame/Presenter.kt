@@ -4,7 +4,7 @@ import kotlin.math.sign
 
 class Presenter(private val view: ChessboardInterface) {
     
-    private val game = Game()
+    private var game = Game()
 
     // Variable of check state
     // 0: no check
@@ -16,6 +16,13 @@ class Presenter(private val view: ChessboardInterface) {
 
     fun cancelMove() {
         game.cancelMove()
+        view.redrawPieces(game.playerWhite.pieces, game.playerBlack.pieces)
+    }
+
+    fun restartGame() {
+        // Init new Game object with initial state of the game
+        game = Game()
+        // ANd redraw pieces on the board
         view.redrawPieces(game.playerWhite.pieces, game.playerBlack.pieces)
     }
 
@@ -45,21 +52,27 @@ class Presenter(private val view: ChessboardInterface) {
     }
 
     private fun movePiece(piecePos: Pair<Int, Int>, movePos: Pair<Int, Int>) {
-        // Tell game to make move for current player
-        game.makeMove(piecePos, movePos)
-        // Clear available moves
-        lastAvailableMoves = listOf()
-        // Tell View to clear selection and available moves on board
-        view.clearSelection()
-        // Tell View to redraw pieces on board
-        view.redrawPieces(game.playerWhite.pieces, game.playerBlack.pieces)
+        // If game is already finished, just display winner (done to prevent moving pieces after game finished, but before restart)
+        // else make move and display winner if there is
+        if (game.isEnd != 0) {
+            view.displayWinner(game.isEnd)
+        } else {
+            // Tell game to make move for current player
+            game.makeMove(piecePos, movePos)
+            // Clear available moves
+            lastAvailableMoves = listOf()
+            // Tell View to clear selection and available moves on board
+            view.clearSelection()
+            // Tell View to redraw pieces on board
+            view.redrawPieces(game.playerWhite.pieces, game.playerBlack.pieces)
 
-        // Display winner player if anyone wins
-        when (game.isEnd) {
-            -1 -> view.displayWinner(-1)
-            1 -> view.displayWinner(1)
+            if (game.isEnd != 0) {
+                view.displayWinner(game.isEnd)
+            }
         }
     }
+
+
 
     // Interface for interaction with View(Activity)
     interface ChessboardInterface {

@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
-import android.widget.Toast
 import com.eg.android.view.customviews.ChessboardView
 import com.google.android.material.snackbar.Snackbar
 
@@ -23,6 +22,10 @@ class MainActivity : AppCompatActivity(), Presenter.ChessboardInterface {
         return when (item.itemId) {
             R.id.cancel_move -> {
                 presenter.cancelMove()
+                true
+            }
+            R.id.restart_game -> {
+                presenter.restartGame()
                 true
             }
             else -> super.onOptionsItemSelected(item)
