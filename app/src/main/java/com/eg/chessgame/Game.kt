@@ -39,6 +39,7 @@ class Game {
                 lastMovePreviousPos as Pair,
                 capturedPiecesQueue)
 
+            gameUtils.updateAllAvailableMoves(players, board)
             // reset these variables to not be able cancel move if it's invalid
             lastMoveCurrentPos = null
             lastMovePreviousPos = null
@@ -53,7 +54,7 @@ class Game {
         val currentPlayer = players[currentPlayerColor] as Player
         if (gameUtils.isCheck(currentPlayer.pieces[currentPlayerColor]!!.second, players[-1*currentPlayerColor] as Player)) {
             gameUtils.cancelMove(players, currentPlayerColor, board, movePos, piecePos, capturedPiecesQueue)
-            gameUtils.updateAllAvailableMoves(players, board)
+            //gameUtils.updateAllAvailableMoves(players, board)
         }
         else {
             // And assign them only in case if move is valid

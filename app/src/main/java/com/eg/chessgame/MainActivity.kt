@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.view.MotionEvent
 import android.widget.Toast
 import com.eg.android.view.customviews.ChessboardView
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), Presenter.ChessboardInterface {
     private lateinit var chessboard: ChessboardView
@@ -61,6 +62,6 @@ class MainActivity : AppCompatActivity(), Presenter.ChessboardInterface {
 
     override fun displayWinner(player: Int) {
         val winnerColorString = if (player == -1) "White player" else "Black player"
-        Toast.makeText(this, "$winnerColorString wins!", Toast.LENGTH_LONG).show()
+        Snackbar.make(findViewById(R.id.chessboard), "$winnerColorString wins!", Snackbar.LENGTH_LONG).show()
     }
 }
