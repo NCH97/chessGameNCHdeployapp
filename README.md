@@ -3,20 +3,19 @@ This is a pet project I'm making. The only purpose of it is to learn android dev
 Made using only Android studio (i.e. it's not an unity project), written in Kotlin.
 WIP.
 # Description
-Current game is playable though.
+Current state of the game is playable though.
 
 Implemented mechanics:
 * you can move pieces 
 * you can capture opponent's pieces
 * you can do a check(chekmate)
 * swaps on each turn
-* Move can be cancelled(only last one)
+* move can be cancelled(only last one)
+* you can restart the game
 
-Will be added: 
-* graphic representations of pieces itself
-* ability to restart the game
-* make game state cacheble
-
-Hopefully will be implemented:
+Hopefully will be implemented(I'm really not sure about these):
 * some fancy graphics
 * multiplayer
+
+Known issues:
+* checkmate is registered even if you can capture opponent's piece attacking your King, i.e. you can avoid checkmate only by moving your King and if have no ability to move it- you lose
