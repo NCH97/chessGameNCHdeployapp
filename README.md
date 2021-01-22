@@ -3,18 +3,12 @@ This is a pet project I'm making. The only purpose of it is to learn android dev
 Made using only Android studio (i.e. it's not an unity project), written in Kotlin.
 WIP.
 # Description
-Current state of the game is playable though.
+Current state of the game is playable though. You can try it yourself by downloading APK provided in Realise.
 
-Implemented mechanics:
-* you can move pieces 
-* you can capture opponent's pieces
-* you can do a check(chekmate)
-* swaps on each turn
-* move can be cancelled(only last one)
-* you can restart the game
+Implemented basic chess mechanics. Last move could be cancelled, game could be restarted. UI is also very simple without fancy animations or cool-looking design.
 
 Hopefully will be implemented(I'm really not sure about these):
-* some fancy graphics
+* fancy UI
 * multiplayer
 
 Known issues:
