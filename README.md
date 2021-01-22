@@ -3,7 +3,7 @@ This is a pet project I'm making. The only purpose of it is to learn android dev
 Made using only Android studio (i.e. it's not an unity project), written in Kotlin.
 WIP.
 
-![Chessboard with pieces](/readme_imgs/Screenshot_1611343276.png)
+![Chessboard with pieces](/readme_imgs/Screenshot_1611343276.png =344x726)
 
 # Description
 Current state of the game is playable though. You can try it yourself by downloading APK provided in Realise.
