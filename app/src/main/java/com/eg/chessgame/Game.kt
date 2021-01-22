@@ -17,6 +17,7 @@ class Game {
     val players: Map<Int, Player> = mapOf(-1 to playerWhite, 1 to playerBlack)
 
     var isEnd = 0
+    val isCheck = mutableMapOf<Int, Boolean>(-1 to false, 1 to false)
     var currentPlayerColor = -1  // first turn is white's turn
 
     // Variables to store values of positions of the last move to implement Cancellation of that move
@@ -40,6 +41,7 @@ class Game {
                 capturedPiecesQueue)
 
             gameUtils.updateAllAvailableMoves(players, board)
+            isEnd = gameUtils.checkEnd(players)
             // reset these variables to not be able cancel move if it's invalid
             lastMoveCurrentPos = null
             lastMovePreviousPos = null
@@ -50,11 +52,22 @@ class Game {
         gameUtils.makeMove(players, currentPlayerColor, board, piecePos, movePos, capturedPiecesQueue)
         gameUtils.updateAllAvailableMoves(players, board)
 
+        for (p in players[-1*currentPlayerColor]!!.availableMoves) {
+            println("$p")
+        }
+
+        // Check if check for both players
+        isCheck[currentPlayerColor] = gameUtils.isCheck(players[currentPlayerColor]!!.pieces[currentPlayerColor]!!.second, players[-1*currentPlayerColor] as Player)
+        isCheck[-1*currentPlayerColor] = gameUtils.isCheck(players[-1*currentPlayerColor]!!.pieces[-1*currentPlayerColor]!!.second, players[currentPlayerColor] as Player)
+
+        for (k in isCheck) {
+            println("$k")
+        }
+
         // Check if player made invalid move and open his king for opponent's attack
-        val currentPlayer = players[currentPlayerColor] as Player
-        if (gameUtils.isCheck(currentPlayer.pieces[currentPlayerColor]!!.second, players[-1*currentPlayerColor] as Player)) {
+        if (isCheck[currentPlayerColor] == true) {
             gameUtils.cancelMove(players, currentPlayerColor, board, movePos, piecePos, capturedPiecesQueue)
-            //gameUtils.updateAllAvailableMoves(players, board)
+            gameUtils.updateAllAvailableMoves(players, board)
         }
         else {
             // And assign them only in case if move is valid

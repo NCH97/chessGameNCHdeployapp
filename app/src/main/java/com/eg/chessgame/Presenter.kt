@@ -72,6 +72,13 @@ class Presenter(private val view: ChessboardInterface) {
             // Tell View to redraw pieces on board
             view.redrawPieces(game.playerWhite.pieces, game.playerBlack.pieces)
 
+            // If king of any player is in check- display a message
+            if (game.isCheck[-1] == true) {
+                view.displayCheck(-1)
+            }
+            if (game.isCheck[1] == true) {
+                view.displayCheck(1)
+            }
             if (game.isEnd != 0) {
                 view.displayWinner(game.isEnd)
             }
@@ -88,5 +95,6 @@ class Presenter(private val view: ChessboardInterface) {
         fun redrawPieces(whitePieces: MutableMap<Int, Pair<String, Pair<Int, Int>>>,
                          blackPieces: MutableMap<Int, Pair<String, Pair<Int, Int>>>)
         fun displayWinner(player: Int)
+        fun displayCheck(player: Int)
     }
 }

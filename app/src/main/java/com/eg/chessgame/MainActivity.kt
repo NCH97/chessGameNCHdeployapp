@@ -61,10 +61,16 @@ class MainActivity : AppCompatActivity(), Presenter.ChessboardInterface {
         whitePieces: MutableMap<Int, Pair<String, Pair<Int, Int>>>,
         blackPieces: MutableMap<Int, Pair<String, Pair<Int, Int>>>) {
         chessboard.redrawPieces(whitePieces, blackPieces)
+        chessboard.clearSelection()
     }
 
     override fun displayWinner(player: Int) {
         val winnerColorString = if (player == -1) "White player" else "Black player"
         Snackbar.make(findViewById(R.id.chessboard), "$winnerColorString wins!", Snackbar.LENGTH_LONG).show()
+    }
+
+    override fun displayCheck(player: Int) {
+        val kingInCheckColor = if (player == -1) "White" else "Black"
+        Snackbar.make(findViewById(R.id.chessboard), "$kingInCheckColor king in check!", Snackbar.LENGTH_LONG).show()
     }
 }

@@ -31,6 +31,9 @@ class Player(var color: Int) {
     // function to update available moves for all pieces of this Player
     fun updateAvailableMoves(board: Array<IntArray>): Unit {
 
+        // before updating available moves clear moves for previous state
+        availableMoves = mutableMapOf()
+
         // Check fig positions for several cases:
         //
         // First: current position is occupied by player's side, next by other side or empty
@@ -48,8 +51,8 @@ class Player(var color: Int) {
 
         fun fKing(pos: Pair<Int, Int>): MutableList<Pair<Int, Int>> {
             val positions = mutableListOf<Pair<Int, Int>>()
-            val rows = (pos.first - 1 to pos.first + 1).toList().filter{(0..7).contains(it)}
-            val cols = (pos.second - 1 to pos.second + 1).toList().filter{(0..7).contains(it)}
+            val rows = ((pos.first - 1)..(pos.first + 1)).toList().filter{(0..7).contains(it)}
+            val cols = ((pos.second - 1)..(pos.second + 1)).toList().filter{(0..7).contains(it)}
 
             rows.forEach{row ->
                 cols.forEach{col ->
@@ -208,6 +211,7 @@ class Player(var color: Int) {
 
         // update of available moves itself
         for ((pieceNum, piece) in pieces) {
+
             val pieceName = piece.first
             val piecePos = piece.second
             availableMoves[pieceNum] = applyFunction(pieceName, piecePos)
