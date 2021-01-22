@@ -10,6 +10,7 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.ContextCompat
 import com.eg.chessgame.R
 
 class ChessboardView(context: Context, attrs: AttributeSet): View(context, attrs) {
@@ -119,21 +120,22 @@ class ChessboardView(context: Context, attrs: AttributeSet): View(context, attrs
 
     // Define Paints for elements to draw
     private val darkPaint = Paint(ANTI_ALIAS_FLAG).apply {
-        color = darkColor
+        color = ContextCompat.getColor(context, R.color.darkSquare)
         style = Paint.Style.FILL
     }
 
     private val brightPaint = Paint(ANTI_ALIAS_FLAG).apply {
-        color = brightColor
+        color = ContextCompat.getColor(context, R.color.brightSquare)
     }
 
     private val selectedPaint = Paint(ANTI_ALIAS_FLAG).apply {
-        color = Color.GREEN
+        color = ContextCompat.getColor(context, R.color.selectionColor)
+        alpha = 200
         style = Paint.Style.FILL
     }
 
     private val availableMovePaint = Paint(ANTI_ALIAS_FLAG).apply {
-        color = Color.RED
+        color = ContextCompat.getColor(context, R.color.selectionColor)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -173,7 +175,7 @@ class ChessboardView(context: Context, attrs: AttributeSet): View(context, attrs
 
         // Draw special tiles for available positions to move
         for (bounds in availableMovesBounds) {
-            canvas.drawRect(bounds, availableMovePaint)
+            canvas.drawRect(bounds, selectedPaint)
         }
     }
 

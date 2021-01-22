@@ -28,6 +28,11 @@ class Presenter(private val view: ChessboardInterface) {
 
     fun handleInput(currentPosition: Pair<Int, Int>?, previousPosition: Pair<Int, Int>?) {
 
+        var lastSelection = 0
+        if (previousPosition != null) {
+            lastSelection = game.board[previousPosition.first][previousPosition.second]
+        }
+
         val pieceNum = game.board[currentPosition!!.first][currentPosition.second]
         val currentPlayerNum = game.currentPlayerColor
 
@@ -35,13 +40,14 @@ class Presenter(private val view: ChessboardInterface) {
             -if chosen piece of current player's side -> tell view to select it and
              display available moves
 
-            -if chosen pos is one of the available moves for previous pos -> make move for
-             piece on previous pos
+            -if chosen pos is one of the available moves for previous pos and previous
+            selection is piece of current player -> make move for piece on previous pos
 
             -else -> clear all selections and list of available positions */
         when {
             (pieceNum.sign == currentPlayerNum) -> selectPieceToMove(pieceNum, currentPlayerNum)
-            (lastAvailableMoves.contains(currentPosition)) -> movePiece(previousPosition!!, currentPosition)
+            (lastAvailableMoves.contains(currentPosition)
+                    && lastSelection.sign == currentPlayerNum) -> movePiece(previousPosition!!, currentPosition)
             else -> view.clearSelection()
         }
     }
