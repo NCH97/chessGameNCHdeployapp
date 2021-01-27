@@ -1,7 +1,6 @@
 # My Implementation of chess on Android
-This is a pet project I'm making. The only purpose of it is to learn android developement.
-Made using only Android studio (i.e. it's not an unity project), written in Kotlin.
-WIP.
+This is a pet project I'm making. The only purpose of it is to learn android developement and MVP pattern.
+Made using only Android studio (i.e. it's not an unity project), written in Kotlin. 
 
 <img src="/readme_imgs/Screenshot_1611343276.png" width="344" height="726"/>
 
