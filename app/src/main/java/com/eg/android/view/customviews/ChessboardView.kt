@@ -11,7 +11,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
-import com.eg.chessgame.R
+import com.eg.chessgame.christophernzenong.R
 
 class ChessboardView(context: Context, attrs: AttributeSet): View(context, attrs) {
 

@@ -1,4 +1,4 @@
-package com.eg.chessgame
+package com.eg.chessgame.christophernzenong
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

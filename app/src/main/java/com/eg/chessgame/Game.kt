@@ -1,4 +1,4 @@
-package com.eg.chessgame
+package com.eg.chessgame.christophernzenong
 
 class Game {
     /*
