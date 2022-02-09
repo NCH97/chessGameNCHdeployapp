@@ -1,0 +1,12 @@
+com.eg.chessgame.christophernzenong.christophernzenong{
+  "type": "service_account",
+  "project_id": "pc-api-5532362998229392166-553",
+  "private_key_id": "0f137f2e39438435d0977e8506069f97abb74504",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDEypiw39/5f8IB\nHJ2B5qpYG6e5oZ47O4t2ulG0Otfk+ze/w8CMnXfb6oogBdqPddfokIOIxh+bc0Bo\nH62rRbVlHoZanb2CQ2g0U78aHViWag31m0JnZHPEYzNaxMsDOWTKO2y3Noxp3mfR\n0X+taI+vIqG9MhJP1f5FGMsnufHlZrHOEBFwQdZhaWXOOnhEkkE4we8spOV7w0Wx\ndAhLyWs5D238uBknWEOcR3a8OeXBlby8iYeIHwTcRFkFJt0VtHebyqk/V3xpOBbm\nfA4z43WqxYdh0WTQ2871h2uCbEOU6dQCr5q5yfKfsczs33slCQ4/NZRr4hsKfwYU\n1QgBuf1PAgMBAAECggEAC1ckJsff9QAjF+6kN6t+lDE+dc4V0OgE3hoCl1ZEwWdQ\ntnZQuZ8MHITkN3re4MwzswKQ8ego7iEIIc1MNBss8YopcpNggQniuWaSFAPY6mIW\nMoR4oSitcIXJnH4hYirZNLuT75hEeIgJMj2BFBHQezvjAi9z1Vye7dsYlKN8iHGh\nVl6a8TFSuXyYuVs2R2qRIujiagZ2rrugDZ6iwzSbg8vS42tYk73NzmJ8UdDavtmq\nqWzwnFzdDAN1WS1rcgBkBypKnPk6QLSzk2xvRi35VK/nwuIjThAaaJZsyvbwXmHP\nblf8YiiTgEbAtdCqfAbmmfBt/Z6DtDtSTxa+DzQWYQKBgQDrNTbMekSAynny85w8\nybBNkMaaJZDjtDVYnyYbEukL+FTCpseCwZrHy9xh2TH0h1jPtGwuzFkWNOuQea38\n3TTK9nm4gT2qlZETbacpwl8la6dotk+YqhJOZiSNAo8B70r2NBGUhC0dvW7OCadv\nTW7F4Wh3sV9NF1l9IOb8gthcGQKBgQDWMAMpaKnIuTCkqAKIfGgsUH4zy/SkeNAe\n94zwwfrN8L4xX+ktNlsAKYNBbGsvp5G8Jxi8G5xxX5iuBUBv0+rczY8AP08mm3ZH\np6XB4HandpJz+t34yQ742oaFSoNrUBBw46uIKlcsCtMsq+dcuudVda6RlgIx8wgr\nkB/ya0JRpwKBgEX0mcvPQbicgBDGa92YjxtCyA7oxWM0IfmtvAOpaC7rOSp7uDMn\nqgVqmK1xj+4Oo1eDbfmtRYHZU4aw6hKfKCiFjkZWCiVGPtPsdR9ydCIJFs2KC7p4\nOuGed5iI/kexCDaZ3fCyL0j9IoudS3NLMHsiQ5P16UZgf3k74/eOYxNhAoGAC68M\nzRp3gIqRm7nKgZV/vUMaz0qF6t7oQ3gviQab3tYOGfVoa932MtkQ3uXCJxRV/9SG\nJeS/sPONCZkhvbfqrObNsS7C65E5b4k2oo/TCSmPraH2r9aP6YVKJ0U8TANPEklp\nFwFwRefFQz+RXF6ZtfC4eBqdvgnK3U18YKX3NSsCgYEA1lrnqXqGhNEspGf8Et0f\n4NVPG7yq8XHAtTbtzoN+oqgD0Jw2e1zN0ghgyHZuOrYzJqt1SBW/50ieqdW0fHPj\nEXdt5W5LRSP6wJImOlul3WlNI8FDfiHnsClG3exIHs+/nB4i9+SNOqRjP5TyRDQK\nFHx7Z9JiffIUp+vOga+lTJY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "fastlane@pc-api-5532362998229392166-553.iam.gserviceaccount.com",
+  "client_id": "100487164640663664165",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fastlane%40pc-api-5532362998229392166-553.iam.gserviceaccount.com"
+}

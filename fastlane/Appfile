@@ -1,0 +1,2 @@
+json_key_file("891730394167-0f137f2e3943.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("com.eg.chessgame.christophernzenong.christophernzenong") # e.g. com.krausefx.app
